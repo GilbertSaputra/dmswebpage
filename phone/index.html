@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <title>Icon Template Square</title>
+        <style>
+            .row{
+                width:100%;
+                margin: 10px auto 40px auto ;
+                height: 250px;
+            }
+            .image-container {
+                width:33%;
+                float:left;
+                height:100px;
+            }
+            .imgInside{
+                width:80%;
+                margin-left:10%;
+            }
+
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div
+        style= "background-image: url(img/iphone2.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                height:950px;
+                width:700px;
+                padding:20px;
+                margin:auto;
+                "
+        >
+
+            <div class="row" style="margin-top:120px;">
+                <div class="image-container"><img id="smhome1" src="img/smarthome.png" class="imgInside"/></div>
+                <div class="image-container"><img id="lock1" src="img/lock.png" class="imgInside"/></div>
+                <div class="image-container"><img id="elec1" src="img/electricity.png" class="imgInside"/></div>
+            </div>
+
+            <div class="row">
+                <div class="image-container"><img id="off1" src="img/off.png" class="imgInside"/></div>
+                <div class="image-container"><img id="sleep1" src="img/sleep.png" class="imgInside"/></div>
+                <div class="image-container"><img id="settings1" src="img/settings.png" class="imgInside"/></div>
+                </div>
+
+            <div class="row">
+                <div class="image-container"><img id="ac1" src="img/AC.png" class="imgInside"/></div>
+                <div class="image-container"><img id="water1" src="img/water.png" class="imgInside"/></div>
+                <div class="image-container"><img id="time1" src="img/time.png" class="imgInside"/></div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.2/buzz.min.js"></script>
+
+        <script>
+
+                console.log ("hello everyone")
+
+        </script>
+
+        <script>
+            const cling = new buzz.sound ("sound/cling.wav")
+            const beep = new buzz.sound ("sound/beep.wav")
+            const shome = new buzz.sound ("sound/home.wav")
+            const ac = new buzz.sound ("sound/ac.wav")
+            const trot = new buzz.sound ("sound/trot.wav")
+            const chime = new buzz.sound ("sound/chime.wav")
+            const bing = new buzz.sound ("sound/bing.wav")
+            const bop = new buzz.sound ("sound/bop.wav")
+            const water = new buzz.sound ("sound/water.wav")
+            const tit = new buzz.sound ("sound/tit.wav")
+
+
+
+            document.getElementById ("smhome1").onpointerdown = () => shome.play ()
+            document.getElementById ("lock1").onpointerdown = () => cling.play ()
+            document.getElementById ("ac1").onpointerdown = () => ac.play ()
+            document.getElementById ("elec1").onpointerdown = () => chime.play ()
+            document.getElementById ("settings1").onpointerdown = () => beep.play ()
+            document.getElementById ("off1").onpointerdown = () => bing.play ()
+            document.getElementById ("sleep1").onpointerdown = () => trot.play ()
+            document.getElementById ("water1").onpointerdown = () => water.play ()
+            document.getElementById ("time1").onpointerdown = () => tit.play ()
+
+
+
+
+
+            document.body.onpointerdown = () => {
+                if (buzz.audioCtx.state != `running`) {
+                    buzz.audioCtx.resume ()
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
